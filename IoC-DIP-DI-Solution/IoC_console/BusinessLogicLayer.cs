@@ -4,10 +4,13 @@
     {
 
         private DataAccessLayerInterface _dataAccessLayer;
-        public BusinessLogicLayer()
+        public BusinessLogicLayer(DataAccessLayerInterface dataAccessLayerInterface)
         {
-            _dataAccessLayer = DataAccessLayerFactory.GetDAL();
+            //_dataAccessLayer = DataAccessLayerFactory.GetDAL();
+            _dataAccessLayer = dataAccessLayerInterface;
         }
+
+
         public List<Product> ProcessData()
         {
             return _dataAccessLayer.GetProducts();

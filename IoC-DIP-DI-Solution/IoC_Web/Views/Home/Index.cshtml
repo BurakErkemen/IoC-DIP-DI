@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Bağımlılık Yaşam Süreleri";
+}
+
+<style>
+    .service-section {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+        background: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        max-width: 500px;
+    }
+    .service-section h2 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    .service-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    .service-table td {
+        padding: 8px 0;
+        font-size: 1.1em;
+    }
+    .desc {
+        color: #555;
+        margin-bottom: 8px;
+    }
+</style>
+
+<div class="service-section">
+    <h2>Singleton</h2>
+    <div class="desc">
+        Singleton servisler uygulama boyunca yalnızca bir kez oluşturulur. Sayfayı yenileseniz bile değer değişmez.
+    </div>
+    <table class="service-table">
+        <tr>
+            <td><strong>Controller'da oluşturulan:</strong></td>
+            <td>@ViewBag.time1</td>
+        </tr>
+        <tr>
+            <td><strong>Metot parametresiyle alınan:</strong></td>
+            <td>@ViewBag.time2</td>
+        </tr>
+    </table>
+</div>
+
+<div class="service-section">
+    <h2>Scoped</h2>
+    <div class="desc">
+        Scoped servisler her HTTP isteğinde bir kez oluşturulur. Sayfayı yenilediğinizde değer değişir.
+    </div>
+    <table class="service-table">
+        <tr>
+            <td><strong>Controller'da oluşturulan:</strong></td>
+            <td>@ViewBag.time3</td>
+        </tr>
+        <tr>
+            <td><strong>Metot parametresiyle alınan:</strong></td>
+            <td>@ViewBag.time4</td>
+        </tr>
+    </table>
+</div>
+
+<div class="service-section">
+    <h2>Transient</h2>
+    <div class="desc">
+        Transient servisler her talepte ve her kullanıldığında yeni bir nesne olarak oluşturulur.
+    </div>
+    <table class="service-table">
+        <tr>
+            <td><strong>Controller'da oluşturulan:</strong></td>
+            <td>@ViewBag.time5</td>
+        </tr>
+        <tr>
+            <td><strong>Metot parametresiyle alınan:</strong></td>
+            <td>@ViewBag.time6</td>
+        </tr>
+    </table>
+</div>
